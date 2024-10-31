@@ -1,0 +1,76 @@
+/* App.module.css */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1b2e;
+  color: #ffffff;
+}
+
+/* Main container styling */
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 7rem;
+  background-color: #282042;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  color: #a020f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #d290f0;
+}
+
+/* Central content area styling */
+.mainContent {
+  min-width: 120vh;
+  max-width: 120vh;
+  min-height: 62vh;
+  background-color: #2e2649;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional styling for individual components */
+.card {
+  background-color: #2e2649;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+
+  .mainContent {
+    min-width: 20vh;
+    max-width: 20vh;
+    min-height: 2vh;
+    background-color: #2e2649;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+}

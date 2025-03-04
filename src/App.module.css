@@ -1,4 +1,4 @@
-/* App.module.css */
+/* 
 
 #root {
   max-width: 1280px;
@@ -9,14 +9,13 @@
   color: #ffffff;
 }
 
-/* Main container styling */
 .appContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Navbar styling */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -24,6 +23,7 @@
   width: 100%;
   display: flex;
   gap: 7rem;
+
   background-color: #282042;
   padding: 15px 30px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -43,7 +43,7 @@
   color: #d290f0;
 }
 
-/* Central content area styling */
+
 .mainContent {
   min-width: 120vh;
   max-width: 120vh;
@@ -54,7 +54,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Additional styling for individual components */
+
 .card {
   background-color: #2e2649;
   padding: 20px;
@@ -66,11 +66,27 @@
 
   .mainContent {
     min-width: 20vh;
-    max-width: 20vh;
+    max-width: 35vh;
     min-height: 2vh;
     background-color: #2e2649;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   }
-}
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+ 
+    gap: 21px;
+    background-color: #282042;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+  }
+  
+} */

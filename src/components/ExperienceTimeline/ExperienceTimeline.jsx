@@ -38,6 +38,7 @@ const ExperienceTimeline = () => {
 
   return (
     <Container className="py-5">
+      <h2 className="text-center text-dark mb-4 fw-bold">My Experience</h2>
       <Row>
         {experiences.map((exp, index) => {
           const isYouTubeLink = exp.image.includes('youtube.com');
@@ -45,8 +46,8 @@ const ExperienceTimeline = () => {
 
           return (
             <Col md={6} lg={4} key={index} className="mb-4">
-              <Card className="h-100 shadow-lg bg-light text-dark d-flex flex-column">
-                <div className="card-header">
+              <Card className="border-0 shadow-lg rounded-3 overflow-hidden bg-white">
+                <div className="card-header p-0 border-0">
                   {isYouTubeLink && embedUrl ? (
                     <iframe
                       width="100%"
@@ -58,25 +59,25 @@ const ExperienceTimeline = () => {
                       allowFullScreen
                     ></iframe>
                   ) : (
-                    <Card.Img variant="top" src={exp.image} alt={exp.title} />
+                    <Card.Img variant="top" src={exp.image} alt={exp.title} className="rounded-top" />
                   )}
                 </div>
-                <Card.Body className="d-flex flex-column">
-                  <Card.Title>{exp.title}</Card.Title>
-                  <Card.Text className="flex-grow-1 text-truncate" style={{ maxHeight: '3rem' }}>
+                <Card.Body className="d-flex flex-column p-4">
+                  <Card.Title className="fw-bold text-primary">{exp.title}</Card.Title>
+                  <Card.Text className="text-secondary flex-grow-1">
                     {exp.description}
                   </Card.Text>
                   <div className="mb-3">
                     {exp.techStack.map((tech, idx) => (
-                      <span className="badge bg-primary me-1" key={idx}>
+                      <span className="badge bg-info text-dark me-1" key={idx}>
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <Button variant="outline-dark" onClick={() => setModalData(exp)}>
+                  <Button variant="dark" className="mt-auto" onClick={() => setModalData(exp)}>
                     Read More
                   </Button>
-                  <a href={exp.link} className="btn btn-outline-dark mt-2">
+                  <a href={exp.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark mt-2">
                     Visit Project
                   </a>
                 </Card.Body>
@@ -90,11 +91,11 @@ const ExperienceTimeline = () => {
       {modalData && (
         <Modal show={!!modalData} onHide={() => setModalData(null)} centered>
           <Modal.Header closeButton>
-            <Modal.Title>{modalData.title}</Modal.Title>
+            <Modal.Title className="fw-bold text-primary">{modalData.title}</Modal.Title>
           </Modal.Header>
-          <Modal.Body>{modalData.description}</Modal.Body>
+          <Modal.Body className="text-secondary">{modalData.description}</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => setModalData(null)}>
+            <Button variant="dark" onClick={() => setModalData(null)}>
               Close
             </Button>
           </Modal.Footer>
@@ -105,4 +106,3 @@ const ExperienceTimeline = () => {
 };
 
 export default ExperienceTimeline;
-

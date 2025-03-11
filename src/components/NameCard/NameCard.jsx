@@ -1,50 +1,60 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-export const NameCard = () => {
-  const description = `Hola! Bienvenido a mi portfolio.
-  Esta es una breve descripción de mis habilidades para el desarrollo web.`;
+function NameCard() {
+    return (
+        <header className='pt-5' id='name-card'>
+            <div className='container py-md-5'>
+                <div className='row d-flex flex-column flex-md-row align-items-center text-center text-md-start'>
+                    
+                    {/* Profile Image */}
+                    <div className='col-md-5 d-flex justify-content-center'>
+                        <img 
+                            className='img-fluid rounded-circle shadow-lg' 
+                            src="https://res.cloudinary.com/doxyqgk7w/image/upload/v1706627979/jybhhhbenrrlog4ezqrx.jpg"
+                            alt="Santiago Ruggeri" 
+                            style={{ 
+                                width: '180px', 
+                                height: '180px', 
+                                objectFit: 'cover', 
+                                border: '4px solid #fff',
+                                transition: 'transform 0.3s ease-in-out'
+                            }} 
+                            onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                            onMouseOut={(e) => e.target.style.transform = 'scale(1.0)'}
+                        />
+                    </div>
 
-  return (
-    <Container className="d-flex justify-content-center mt-5">
-      <Card className="shadow-lg bg-dark text-light p-4" style={{ maxWidth: '800px', width: '100%', borderRadius: '20px' }}>
-        <Row className="g-4 align-items-center">
-          {/* Profile Image */}
-          <Col xs={12} md={4} className="text-center">
-            <img
-              src="https://res.cloudinary.com/doxyqgk7w/image/upload/v1706627979/jybhhhbenrrlog4ezqrx.jpg"
-              alt="Santiago Ruggeri"
-              className="rounded-circle img-fluid shadow"
-              style={{ width: '180px', height: '180px', border: '4px solid #fff' }}
-            />
-          </Col>
+                    {/* Info Section */}
+                    <div className='col-md-7 d-flex flex-column align-items-center align-items-md-start justify-content-center mt-4 mt-md-0'>
+                        <h3 className='text-secondary fw-bold lh-1'>Santiago Ruggeri</h3>
+                        <h1 className='text-capitalize text-primary fw-bold lh-1 mb-3'>
+                            Web Developer
+                        </h1>
+                        <p className='text-muted lead'>
+                            Hola! Bienvenido a mi portfolio. Esta es una breve descripción de mis habilidades para el desarrollo web.
+                        </p>
 
-          {/* Information */}
-          <Col xs={12} md={8}>
-            <Card.Body>
-              <h2 className="fw-bold">Santiago Ruggeri</h2>
-              <h5 className="text-primary">Web Developer</h5>
-              <p className="text-light">{description}</p>
+                        {/* Social Links */}
+                        <div className='d-flex gap-3 flex-wrap justify-content-center justify-content-md-start'>
+                            <a href="mailto:santiruu@gmail.com" className="btn btn-outline-dark btn-lg d-flex align-items-center gap-2">
+                                <FontAwesomeIcon icon={faEnvelope} /> Email
+                            </a>
+                            <a href="https://github.com/CSRuggeri" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark btn-lg d-flex align-items-center gap-2">
+                                <FontAwesomeIcon icon={faGithub} /> GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/santiruu/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark btn-lg d-flex align-items-center gap-2">
+                                <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+                            </a>
+                        </div>
+                    </div>
 
-              {/* Contact Buttons */}
-              <div className="d-flex gap-2 flex-wrap">
-                <Button variant="outline-light" href="mailto:santiruu@gmail.com" className="d-flex align-items-center gap-2">
-                  <FontAwesomeIcon icon={faEnvelope} /> Email
-                </Button>
-                <Button variant="outline-light" href="https://github.com/CSRuggeri" target="_blank" className="d-flex align-items-center gap-2">
-                  <FontAwesomeIcon icon={faGithub} /> GitHub
-                </Button>
-                <Button variant="outline-light" href="https://www.linkedin.com/in/santiruu/" target="_blank" className="d-flex align-items-center gap-2">
-                  <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-                </Button>
-              </div>
-            </Card.Body>
-          </Col>
-        </Row>
-      </Card>
-    </Container>
-  );
-};
+                </div>
+            </div>
+        </header>
+    );
+}
+
+export default NameCard;
